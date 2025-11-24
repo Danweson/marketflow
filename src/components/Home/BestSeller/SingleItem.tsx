@@ -41,9 +41,9 @@ const SingleItem = ({ item }: { item: Product }) => {
 
   return (
     <div className="group">
-      <div className="relative overflow-hidden rounded-lg bg-[#F6F7FB] min-h-[403px]">
+      <div className="relative overflow-hidden rounded-lg bg-[#F6F7FB] min-h-[403px shadow-1">
         <div className="text-center px-4 py-7.5">
-          <div className="flex items-center justify-center gap-2.5 mb-2">
+          {/* <div className="flex items-center justify-center gap-2.5 mb-2">
             <div className="flex items-center gap-1">
               <Image
                 src="/images/icons/icon-star.svg"
@@ -78,15 +78,16 @@ const SingleItem = ({ item }: { item: Product }) => {
             </div>
 
             <p className="text-custom-sm">({item.reviews})</p>
-          </div>
+          </div> */}
 
-          <h3 className="font-medium text-dark ease-out duration-200 hover:text-blue mb-1.5">
-            <Link href="/shop-details"> {item.title} </Link>
+          <h3 className="font-medium text-dark ease-out duration-200 hover:text-yellow mb-1.5">
+            <Link href="/product-details"> {item.title} </Link>
           </h3>
 
+          <span className="text-dark">à partir de 200 pièces</span>
           <span className="flex items-center justify-center gap-2 font-medium text-lg">
-            <span className="text-dark">${item.discountedPrice}</span>
-            <span className="text-dark-4 line-through">${item.price}</span>
+            <span className="text-dark">{item.discountedPrice} {item.currency}</span>
+            <span className="text-dark-4 line-through">{item.price} {item.currency}</span>
           </span>
         </div>
 
@@ -102,7 +103,7 @@ const SingleItem = ({ item }: { item: Product }) => {
             }}
             aria-label="button for quick view"
             id="bestOne"
-            className="flex items-center justify-center w-9 h-9 rounded-[5px] shadow-1 ease-out duration-200 text-dark bg-white hover:text-white hover:bg-blue"
+            className="flex items-center justify-center w-9 h-9 rounded-[5px] shadow-1 ease-out duration-200 text-dark bg-white hover:text-white hover:bg-yellow"
           >
             <svg
               className="fill-current"
@@ -131,7 +132,7 @@ const SingleItem = ({ item }: { item: Product }) => {
             onClick={() => handleAddToCart()}
             aria-label="button for add to cart"
             id="addCartOne"
-            className="flex items-center justify-center w-9 h-9 rounded-[5px] shadow-1 ease-out duration-200 text-dark bg-white hover:text-white hover:bg-blue"
+            className="flex items-center justify-center w-9 h-9 rounded-[5px] shadow-1 ease-out duration-200 text-dark bg-white hover:text-white hover:bg-yellow"
           >
             <svg
               className="fill-current"
@@ -168,7 +169,7 @@ const SingleItem = ({ item }: { item: Product }) => {
             }}
             aria-label="button for add to fav"
             id="addFavOne"
-            className="flex items-center justify-center w-9 h-9 rounded-[5px] shadow-1 ease-out duration-200 text-dark bg-white hover:text-white hover:bg-blue"
+            className="flex items-center justify-center w-9 h-9 rounded-[5px] shadow-1 ease-out duration-200 text-dark bg-white hover:text-white hover:bg-yellow"
           >
             <svg
               className="fill-current"

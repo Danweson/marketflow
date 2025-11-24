@@ -34,7 +34,7 @@ const config: Config = {
         5: "#BBBEC9",
       },
       dark: {
-        DEFAULT: "#1C274C",
+        DEFAULT: "#0D3442",
         2: "#495270",
         3: "#606882",
         4: "#8D93A5",
@@ -80,7 +80,8 @@ const config: Config = {
         "light-6": "#DAF8E6",
       },
       yellow: {
-        DEFAULT: "#FBBF24",
+        DEFAULT: "#FF8A34",
+        // DEFAULT: "#FF8A34",
         dark: "#F59E0B",
         "dark-2": "#D97706",
         light: "#FCD34D",

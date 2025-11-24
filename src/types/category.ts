@@ -1,5 +1,6 @@
 export type Category = {
   title: string;
   id: number;
-  img: string;
+  img?: string;
+  icon?: React.ComponentType<{ size?: number; className?: string }>;
 };

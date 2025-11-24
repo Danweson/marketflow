@@ -22,7 +22,7 @@ const MyAccount = () => {
       <Breadcrumb title={"My Account"} pages={["my account"]} />
 
       <section className="overflow-hidden py-20 bg-gray-2">
-        <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
+        <div className="max-w-[1200px] w-full mx-auto px-4 sm:px-8 xl:px-0">
           <div className="flex flex-col xl:flex-row gap-7.5">
             {/* <!--== user dashboard menu start ==--> */}
             <div className="xl:max-w-[370px] w-full bg-white rounded-xl shadow-1">
@@ -125,7 +125,8 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Orders
+                      {/* Orders */}
+                      Commandes
                     </button>
 
                     <button
@@ -153,7 +154,8 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Downloads
+                      {/* Downloads */}
+                      Téléchargements
                     </button>
 
                     <button
@@ -183,7 +185,8 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Addresses
+                      {/* Addresses */}
+                      Adresses
                     </button>
 
                     <button
@@ -215,7 +218,8 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Account Details
+                      {/* Account Details */}
+                      Détails du compte
                     </button>
 
                     <button
@@ -243,7 +247,8 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Logout
+                      {/* Logout */}
+                        Se déconnecter
                     </button>
                   </div>
                 </div>
@@ -266,15 +271,19 @@ const MyAccount = () => {
                   href="#"
                   className="text-red ease-out duration-200 hover:underline"
                 >
-                  Log Out
+                  {/* Log Out */}
+                    Se déconnecter
                 </a>
                 )
               </p>
 
               <p className="text-custom-sm mt-4">
-                From your account dashboard you can view your recent orders,
+                {/* From your account dashboard you can view your recent orders,
                 manage your shipping and billing addresses, and edit your
-                password and account details.
+                password and account details. */}
+                Depuis le tableau de bord de votre compte, vous pouvez voir vos
+                commandes récentes, gérer vos adresses de livraison et de facturation,
+                et modifier votre mot de passe et les détails de votre compte.
               </p>
             </div>
             {/* <!-- dashboard tab content end -->
@@ -295,7 +304,10 @@ const MyAccount = () => {
                 activeTab === "downloads" ? "block" : "hidden"
               }`}
             >
-              <p>You don&apos;t have any download</p>
+              <p>
+                {/* You don&apos;t have any download */}
+                Vous n&apos;avez pas de téléchargements disponibles
+              </p>
             </div>
             {/* <!-- downloads tab content end -->
 
@@ -405,7 +417,7 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Phone: 1234 567890
+                      Numéro de Téléphone: 1234 567890
                     </p>
 
                     <p className="flex gap-2.5 text-custom-sm">
@@ -431,7 +443,7 @@ const MyAccount = () => {
                           </clipPath>
                         </defs>
                       </svg>
-                      Address: 7398 Smoke Ranch RoadLas Vegas, Nevada 89128
+                      Adresse: 7398 Smoke Ranch RoadLas Vegas, Nevada 89128
                     </p>
                   </div>
                 </div>
@@ -440,7 +452,8 @@ const MyAccount = () => {
               <div className="xl:max-w-[370px] w-full bg-white shadow-1 rounded-xl">
                 <div className="flex items-center justify-between py-5 px-4 sm:pl-7.5 sm:pr-6 border-b border-gray-3">
                   <p className="font-medium text-xl text-dark">
-                    Billing Address
+                    {/* Billing Address */}
+                    Adresse de facturation
                   </p>
 
                   <button
@@ -489,7 +502,7 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Name: James Septimus
+                      Nom Complet: James Septimus
                     </p>
 
                     <p className="flex items-center gap-2.5 text-custom-sm">
@@ -537,7 +550,7 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Phone: 1234 567890
+                      Numéro de Téléphone: 1234 567890
                     </p>
 
                     <p className="flex gap-2.5 text-custom-sm">
@@ -563,7 +576,7 @@ const MyAccount = () => {
                           </clipPath>
                         </defs>
                       </svg>
-                      Address: 7398 Smoke Ranch RoadLas Vegas, Nevada 89128
+                      Adresse: 7398 Smoke Ranch RoadLas Vegas, Nevada 89128
                     </p>
                   </div>
                 </div>
@@ -582,7 +595,7 @@ const MyAccount = () => {
                   <div className="flex flex-col lg:flex-row gap-5 sm:gap-8 mb-5">
                     <div className="w-full">
                       <label htmlFor="firstName" className="block mb-2.5">
-                        First Name <span className="text-red">*</span>
+                        Prénom <span className="text-red">*</span>
                       </label>
 
                       <input
@@ -597,7 +610,7 @@ const MyAccount = () => {
 
                     <div className="w-full">
                       <label htmlFor="lastName" className="block mb-2.5">
-                        Last Name <span className="text-red">*</span>
+                        Nom <span className="text-red">*</span>
                       </label>
 
                       <input
@@ -613,7 +626,7 @@ const MyAccount = () => {
 
                   <div className="mb-5">
                     <label htmlFor="countryName" className="block mb-2.5">
-                      Country/ Region <span className="text-red">*</span>
+                      Pays/ Région <span className="text-red">*</span>
                     </label>
 
                     <div className="relative">
@@ -647,23 +660,28 @@ const MyAccount = () => {
                     type="submit"
                     className="inline-flex font-medium text-white bg-blue py-3 px-7 rounded-md ease-out duration-200 hover:bg-blue-dark"
                   >
-                    Save Changes
+                    {/* Save Changes */}
+                    Enregistrer les modifications
                   </button>
                 </div>
 
                 <p className="text-custom-sm mt-5 mb-9">
-                  This will be how your name will be displayed in the account
-                  section and in reviews
+                  {/* This will be how your name will be displayed in the account
+                  section and in reviews */}
+                    C'est ainsi que votre nom sera affiché dans la section du
+                    compte et dans les avis
                 </p>
 
                 <p className="font-medium text-xl sm:text-2xl text-dark mb-7">
-                  Password Change
+                  {/* Password Change */}
+                    Mise à jour du mot de passe
                 </p>
 
                 <div className="bg-white shadow-1 rounded-xl p-4 sm:p-8.5">
                   <div className="mb-5">
                     <label htmlFor="oldPassword" className="block mb-2.5">
-                      Old Password
+                      {/* Old Password */}
+                        Ancien mot de passe
                     </label>
 
                     <input
@@ -677,7 +695,8 @@ const MyAccount = () => {
 
                   <div className="mb-5">
                     <label htmlFor="newPassword" className="block mb-2.5">
-                      New Password
+                      {/* New Password */}
+                        Nouveau mot de passe
                     </label>
 
                     <input
@@ -694,7 +713,8 @@ const MyAccount = () => {
                       htmlFor="confirmNewPassword"
                       className="block mb-2.5"
                     >
-                      Confirm New Password
+                      {/* Confirm New Password */}
+                        Confirmer le nouveau mot de passe
                     </label>
 
                     <input
@@ -710,7 +730,8 @@ const MyAccount = () => {
                     type="submit"
                     className="inline-flex font-medium text-white bg-blue py-3 px-7 rounded-md ease-out duration-200 hover:bg-blue-dark"
                   >
-                    Change Password
+                    {/* Change Password */}
+                    Changer le mot de passe
                   </button>
                 </div>
               </form>

@@ -7,17 +7,19 @@ import BestSeller from "./BestSeller";
 import CounDown from "./Countdown";
 import Testimonials from "./Testimonials";
 import Newsletter from "../Common/Newsletter";
+import WholeSalers from "../Wholesalers";
 
 const Home = () => {
   return (
     <main>
-      <Hero />
+      {/* <Hero /> */}
       <Categories />
       <NewArrival />
-      <PromoBanner />
+      {/* <PromoBanner /> */}
       <BestSeller />
-      <CounDown />
-      <Testimonials />
+      {/* <CounDown /> */}
+      <WholeSalers/>
+      {/* <Testimonials /> */}
       {/* <Newsletter /> */}
     </main>
   );

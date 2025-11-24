@@ -4,7 +4,7 @@ import Image from "next/image";
 const Newsletter = () => {
   return (
     <section className="overflow-hidden">
-      <div className="max-w-[1170px] mx-auto px-4 sm:px-8 xl:px-0">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-8 xl:px-0">
         <div className="relative z-1 overflow-hidden rounded-xl">
           {/* <!-- bg shapes --> */}
           <Image
@@ -19,11 +19,12 @@ const Newsletter = () => {
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 px-4 sm:px-7.5 xl:pl-12.5 xl:pr-14 py-11">
             <div className="max-w-[491px] w-full">
               <h2 className="max-w-[399px] text-white font-bold text-lg sm:text-xl xl:text-heading-4 mb-3">
-                Don&apos;t Miss Out Latest Trends & Offers
+                {/* Don&apos;t Miss Out Latest Trends & Offers */}
+                Ne manquez pas les dernières tendances et offres
               </h2>
               <p className="text-white">
-                Register to receive news about the latest offers & discount
-                codes
+                {/* Register to receive news about the latest offers & discount codes */}
+                Inscrivez-vous pour recevoir des nouvelles sur les dernières offres et codes de réduction
               </p>
             </div>
 
@@ -34,14 +35,15 @@ const Newsletter = () => {
                     type="email"
                     name="email"
                     id="email"
-                    placeholder="Enter your email"
+                    placeholder="Entrez votre adresse email"
                     className="w-full bg-gray-1 border border-gray-3 outline-none rounded-md placeholder:text-dark-4 py-3 px-5"
                   />
                   <button
                     type="submit"
-                    className="inline-flex justify-center py-3 px-7 text-white bg-blue font-medium rounded-md ease-out duration-200 hover:bg-blue-dark"
+                    className="inline-flex justify-center py-3 px-7 text-white bg-dark font-medium rounded-md ease-out duration-200 hover:bg-dark"
                   >
-                    Subscribe
+                    {/* Subscribe */}
+                    S'abonner
                   </button>
                 </div>
               </form>

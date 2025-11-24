@@ -5,19 +5,19 @@ const OrderDetails = ({ orderItem }: any) => {
     <>
       <div className="items-center justify-between py-4.5 px-7.5 hidden md:flex ">
         <div className="min-w-[113px]">
-          <p className="text-custom-sm text-dark">Order</p>
+          <p className="text-custom-sm text-dark">Commande</p>
         </div>
         <div className="min-w-[113px]">
           <p className="text-custom-sm text-dark">Date</p>
         </div>
 
         <div className="min-w-[113px]">
-          <p className="text-custom-sm text-dark">Status</p>
+          <p className="text-custom-sm text-dark">Statut</p>
         </div>
 
-        {/* <div className="min-w-[113px]">
-          <p className="text-custom-sm text-dark">Title</p>
-        </div> */}
+        <div className="min-w-[113px]">
+          <p className="text-custom-sm text-dark">Titre</p>
+        </div>
 
         <div className="min-w-[113px]">
           <p className="text-custom-sm text-dark">Total</p>

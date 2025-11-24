@@ -6,6 +6,8 @@ import Newsletter from "../Common/Newsletter";
 import RecentlyViewdItems from "./RecentlyViewd";
 import { usePreviewSlider } from "@/app/context/PreviewSliderContext";
 import { useAppSelector } from "@/redux/store";
+import WholesalerDetails from "../Wholesalers/WholeSalerDetails";
+import WholesalerDetailsSmall from "../Wholesalers/WholeSalerDetailsSmall";
 
 const ShopDetails = () => {
   const [activeColor, setActiveColor] = useState("blue");
@@ -65,7 +67,7 @@ const ShopDetails = () => {
     },
     {
       id: "tabTwo",
-      title: "Additional Information",
+      title: "Informations de l'Agent",
     },
     {
       id: "tabThree",
@@ -91,18 +93,17 @@ const ShopDetails = () => {
     openPreviewModal();
   };
 
-  console.log(product);
 
   return (
     <>
-      <Breadcrumb title={"Shop Details"} pages={["shop details"]} />
+      <Breadcrumb title={"Détails"} pages={["shop details"]} />
 
-      {product.title === "" ? (
+      {product.title !== "" ? (
         "Please add product"
       ) : (
         <>
           <section className="overflow-hidden relative pb-20 pt-5 lg:pt-20 xl:pt-28">
-            <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
+            <div className="max-w-[1200px] w-full mx-auto px-4 sm:px-8 xl:px-0">
               <div className="flex flex-col lg:flex-row gap-7.5 xl:gap-17.5">
                 <div className="lg:max-w-[570px] w-full">
                   <div className="lg:min-h-[512px] rounded-lg shadow-1 bg-gray-2 p-4 sm:p-7.5 relative flex items-center justify-center">
@@ -130,8 +131,9 @@ const ShopDetails = () => {
                       </button>
 
                       <Image
-                        src={product.imgs?.previews[previewImg]}
+                        src={product.imgs?.previews[previewImg] ||'/images/products/product-1-bg-1.png'}
                         alt="products-details"
+                        loader={() => product.imgs?.previews[previewImg] ||'/images/products/product-1-bg-1.png' }
                         width={400}
                         height={400}
                       />
@@ -168,8 +170,8 @@ const ShopDetails = () => {
                       {product.title}
                     </h2>
 
-                    <div className="inline-flex font-medium text-custom-sm text-white bg-blue rounded py-0.5 px-2.5">
-                      30% OFF
+                    <div className="inline-flex font-medium text-custom-sm text-white bg-dark rounded py-0.5 px-2.5">
+                      30% de Réduction
                     </div>
                   </div>
 
@@ -311,17 +313,20 @@ const ShopDetails = () => {
                         </defs>
                       </svg>
 
-                      <span className="text-green"> In Stock </span>
+                      <span className="text-green"> 
+                        {/* In Stock  */}
+                        En stock
+                      </span>
                     </div>
                   </div>
 
                   <h3 className="font-medium text-custom-1 mb-4.5">
                     <span className="text-sm sm:text-base text-dark">
-                      Price: ${product.price}
+                      Prix: ${product.price} ${product.currency}
                     </span>
                     <span className="line-through">
                       {" "}
-                      ${product.discountedPrice}{" "}
+                      {product.discountedPrice}{" "} {product.currency}
                     </span>
                   </h3>
 
@@ -336,13 +341,13 @@ const ShopDetails = () => {
                       >
                         <path
                           d="M13.3589 8.35863C13.603 8.11455 13.603 7.71882 13.3589 7.47475C13.1149 7.23067 12.7191 7.23067 12.4751 7.47475L8.75033 11.1995L7.5256 9.97474C7.28152 9.73067 6.8858 9.73067 6.64172 9.97474C6.39764 10.2188 6.39764 10.6146 6.64172 10.8586L8.30838 12.5253C8.55246 12.7694 8.94819 12.7694 9.19227 12.5253L13.3589 8.35863Z"
-                          fill="#3C50E0"
+                          fill="#0D3442"
                         />
                         <path
                           fillRule="evenodd"
                           clipRule="evenodd"
                           d="M10.0003 1.04169C5.05277 1.04169 1.04199 5.05247 1.04199 10C1.04199 14.9476 5.05277 18.9584 10.0003 18.9584C14.9479 18.9584 18.9587 14.9476 18.9587 10C18.9587 5.05247 14.9479 1.04169 10.0003 1.04169ZM2.29199 10C2.29199 5.74283 5.74313 2.29169 10.0003 2.29169C14.2575 2.29169 17.7087 5.74283 17.7087 10C17.7087 14.2572 14.2575 17.7084 10.0003 17.7084C5.74313 17.7084 2.29199 14.2572 2.29199 10Z"
-                          fill="#3C50E0"
+                          fill="#0D3442"
                         />
                       </svg>
                       Free delivery available
@@ -358,16 +363,18 @@ const ShopDetails = () => {
                       >
                         <path
                           d="M13.3589 8.35863C13.603 8.11455 13.603 7.71882 13.3589 7.47475C13.1149 7.23067 12.7191 7.23067 12.4751 7.47475L8.75033 11.1995L7.5256 9.97474C7.28152 9.73067 6.8858 9.73067 6.64172 9.97474C6.39764 10.2188 6.39764 10.6146 6.64172 10.8586L8.30838 12.5253C8.55246 12.7694 8.94819 12.7694 9.19227 12.5253L13.3589 8.35863Z"
-                          fill="#3C50E0"
+                          fill="#0D3442"
                         />
                         <path
                           fillRule="evenodd"
                           clipRule="evenodd"
                           d="M10.0003 1.04169C5.05277 1.04169 1.04199 5.05247 1.04199 10C1.04199 14.9476 5.05277 18.9584 10.0003 18.9584C14.9479 18.9584 18.9587 14.9476 18.9587 10C18.9587 5.05247 14.9479 1.04169 10.0003 1.04169ZM2.29199 10C2.29199 5.74283 5.74313 2.29169 10.0003 2.29169C14.2575 2.29169 17.7087 5.74283 17.7087 10C17.7087 14.2572 14.2575 17.7084 10.0003 17.7084C5.74313 17.7084 2.29199 14.2572 2.29199 10Z"
-                          fill="#3C50E0"
+                          fill="#0D3442"
                         />
                       </svg>
-                      Sales 30% Off Use Code: PROMO30
+                      {/* Sales 30% Off Use Code: PROMO30 */}
+
+
                     </li>
                   </ul>
 
@@ -376,7 +383,7 @@ const ShopDetails = () => {
                       {/* <!-- details item --> */}
                       <div className="flex items-center gap-4">
                         <div className="min-w-[65px]">
-                          <h4 className="font-medium text-dark">Color:</h4>
+                          <h4 className="font-medium text-dark">Couleur:</h4>
                         </div>
 
                         <div className="flex items-center gap-2.5">
@@ -414,7 +421,7 @@ const ShopDetails = () => {
                       {/* <!-- details item --> */}
                       <div className="flex items-center gap-4">
                         <div className="min-w-[65px]">
-                          <h4 className="font-medium text-dark">Storage:</h4>
+                          <h4 className="font-medium text-dark">Stockage:</h4>
                         </div>
 
                         <div className="flex items-center gap-4">
@@ -461,7 +468,7 @@ const ShopDetails = () => {
                                         width="16"
                                         height="16"
                                         rx="4"
-                                        fill="#3C50E0"
+                                        fill="#0D3442"
                                       />
                                       <path
                                         fillRule="evenodd"
@@ -529,7 +536,7 @@ const ShopDetails = () => {
                                         width="16"
                                         height="16"
                                         rx="4"
-                                        fill="#3C50E0"
+                                        fill="#0D3442"
                                       />
                                       <path
                                         fillRule="evenodd"
@@ -597,7 +604,7 @@ const ShopDetails = () => {
                                         width="16"
                                         height="16"
                                         rx="4"
-                                        fill="#3C50E0"
+                                        fill="#0D3442"
                                       />
                                       <path
                                         fillRule="evenodd"
@@ -620,7 +627,7 @@ const ShopDetails = () => {
                       <div className="flex items-center rounded-md border border-gray-3">
                         <button
                           aria-label="button for remove product"
-                          className="flex items-center justify-center w-12 h-12 ease-out duration-200 hover:text-blue"
+                          className="flex items-center justify-center bg-white w-12 h-12 ease-out duration-200 hover:text-yellow"
                           onClick={() =>
                             quantity > 1 && setQuantity(quantity - 1)
                           }
@@ -640,14 +647,14 @@ const ShopDetails = () => {
                           </svg>
                         </button>
 
-                        <span className="flex items-center justify-center w-16 h-12 border-x border-gray-4">
+                        <span className="flex items-center justify-center w-16 h-12 bg-white border-x border-gray-4">
                           {quantity}
                         </span>
 
                         <button
                           onClick={() => setQuantity(quantity + 1)}
                           aria-label="button for add product"
-                          className="flex items-center justify-center w-12 h-12 ease-out duration-200 hover:text-blue"
+                          className="flex items-center justify-center w-12 h-12 bg-white ease-out duration-200 hover:text-yellow"
                         >
                           <svg
                             className="fill-current"
@@ -671,14 +678,15 @@ const ShopDetails = () => {
 
                       <a
                         href="#"
-                        className="inline-flex font-medium text-white bg-blue py-3 px-7 rounded-md ease-out duration-200 hover:bg-blue-dark"
+                        className="inline-flex font-medium text-white bg-yellow py-3 px-7 rounded-md ease-out duration-200 hover:bg-dark"
                       >
-                        Purchase Now
+                        {/* Purchase Now */}
+                        Acheter maintenant
                       </a>
 
                       <a
                         href="#"
-                        className="flex items-center justify-center w-12 h-12 rounded-md border border-gray-3 ease-out duration-200 hover:text-white hover:bg-dark hover:border-transparent"
+                        className="flex items-center justify-center w-12 h-12 rounded-md bg-white border border-gray-3 ease-out duration-200 hover:text-white hover:bg-dark hover:border-transparent"
                       >
                         <svg
                           className="fill-current"
@@ -704,16 +712,16 @@ const ShopDetails = () => {
           </section>
 
           <section className="overflow-hidden bg-gray-2 py-20">
-            <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
+            <div className="max-w-[1200px] w-full mx-auto px-4 sm:px-8 xl:px-0">
               {/* <!--== tab header start ==--> */}
               <div className="flex flex-wrap items-center bg-white rounded-[10px] shadow-1 gap-5 xl:gap-12.5 py-4.5 px-4 sm:px-6">
                 {tabs.map((item, key) => (
                   <button
                     key={key}
                     onClick={() => setActiveTab(item.id)}
-                    className={`font-medium lg:text-lg ease-out duration-200 hover:text-blue relative before:h-0.5 before:bg-blue before:absolute before:left-0 before:bottom-0 before:ease-out before:duration-200 hover:before:w-full ${
+                    className={`font-medium lg:text-lg ease-out duration-200 hover:text-yellow relative before:h-0.5 before:bg-yellow before:absolute before:left-0 before:bottom-0 before:ease-out before:duration-200 hover:before:w-full ${
                       activeTab === item.id
-                        ? "text-blue before:w-full"
+                        ? "text-yellow before:w-full"
                         : "text-dark before:w-0"
                     }`}
                   >
@@ -733,7 +741,7 @@ const ShopDetails = () => {
                 >
                   <div className="max-w-[670px] w-full">
                     <h2 className="font-medium text-2xl text-dark mb-7">
-                      Specifications:
+                      Spécifications:
                     </h2>
 
                     <p className="mb-6">
@@ -784,138 +792,141 @@ const ShopDetails = () => {
                     activeTab === "tabTwo" ? "block" : "hidden"
                   }`}
                 >
-                  {/* <!-- info item --> */}
-                  <div className="rounded-md even:bg-gray-1 flex py-4 px-4 sm:px-5">
-                    <div className="max-w-[450px] min-w-[140px] w-full">
-                      <p className="text-sm sm:text-base text-dark">Brand</p>
-                    </div>
-                    <div className="w-full">
-                      <p className="text-sm sm:text-base text-dark">Apple</p>
-                    </div>
-                  </div>
+                        <WholesalerDetailsSmall/>
+                        {/* <>
+                            <div className="rounded-md even:bg-gray-1 flex py-4 px-4 sm:px-5">
+                                <div className="max-w-[450px] min-w-[140px] w-full">
+                                <p className="text-sm sm:text-base text-dark">Brand</p>
+                                </div>
+                                <div className="w-full">
+                                <p className="text-sm sm:text-base text-dark">Apple</p>
+                                </div>
+                            </div>
 
-                  {/* <!-- info item --> */}
-                  <div className="rounded-md even:bg-gray-1 flex py-4 px-4 sm:px-5">
-                    <div className="max-w-[450px] min-w-[140px] w-full">
-                      <p className="text-sm sm:text-base text-dark">Model</p>
-                    </div>
-                    <div className="w-full">
-                      <p className="text-sm sm:text-base text-dark">
-                        iPhone 14 Plus
-                      </p>
-                    </div>
-                  </div>
+                            
+                            <div className="rounded-md even:bg-gray-1 flex py-4 px-4 sm:px-5">
+                                <div className="max-w-[450px] min-w-[140px] w-full">
+                                <p className="text-sm sm:text-base text-dark">Model</p>
+                                </div>
+                                <div className="w-full">
+                                <p className="text-sm sm:text-base text-dark">
+                                    iPhone 14 Plus
+                                </p>
+                                </div>
+                            </div>
 
-                  {/* <!-- info item --> */}
-                  <div className="rounded-md even:bg-gray-1 flex py-4 px-4 sm:px-5">
-                    <div className="max-w-[450px] min-w-[140px] w-full">
-                      <p className="text-sm sm:text-base text-dark">
-                        Display Size
-                      </p>
-                    </div>
-                    <div className="w-full">
-                      <p className="text-sm sm:text-base text-dark">
-                        6.7 inches
-                      </p>
-                    </div>
-                  </div>
+                            
+                            <div className="rounded-md even:bg-gray-1 flex py-4 px-4 sm:px-5">
+                                <div className="max-w-[450px] min-w-[140px] w-full">
+                                <p className="text-sm sm:text-base text-dark">
+                                    Display Size
+                                </p>
+                                </div>
+                                <div className="w-full">
+                                <p className="text-sm sm:text-base text-dark">
+                                    6.7 inches
+                                </p>
+                                </div>
+                            </div>
 
-                  {/* <!-- info item --> */}
-                  <div className="rounded-md even:bg-gray-1 flex py-4 px-4 sm:px-5">
-                    <div className="max-w-[450px] min-w-[140px] w-full">
-                      <p className="text-sm sm:text-base text-dark">
-                        Display Type
-                      </p>
-                    </div>
-                    <div className="w-full">
-                      <p className="text-sm sm:text-base text-dark">
-                        Super Retina XDR OLED, HDR10, Dolby Vision, 800 nits
-                        (HBM), 1200 nits (peak)
-                      </p>
-                    </div>
-                  </div>
+                            
+                            <div className="rounded-md even:bg-gray-1 flex py-4 px-4 sm:px-5">
+                                <div className="max-w-[450px] min-w-[140px] w-full">
+                                <p className="text-sm sm:text-base text-dark">
+                                    Display Type
+                                </p>
+                                </div>
+                                <div className="w-full">
+                                <p className="text-sm sm:text-base text-dark">
+                                    Super Retina XDR OLED, HDR10, Dolby Vision, 800 nits
+                                    (HBM), 1200 nits (peak)
+                                </p>
+                                </div>
+                            </div>
 
-                  {/* <!-- info item --> */}
-                  <div className="rounded-md even:bg-gray-1 flex py-4 px-4 sm:px-5">
-                    <div className="max-w-[450px] min-w-[140px] w-full">
-                      <p className="text-sm sm:text-base text-dark">
-                        Display Resolution
-                      </p>
-                    </div>
-                    <div className="w-full">
-                      <p className="text-sm sm:text-base text-dark">
-                        1284 x 2778 pixels, 19.5:9 ratio
-                      </p>
-                    </div>
-                  </div>
+                            
+                            <div className="rounded-md even:bg-gray-1 flex py-4 px-4 sm:px-5">
+                                <div className="max-w-[450px] min-w-[140px] w-full">
+                                <p className="text-sm sm:text-base text-dark">
+                                    Display Resolution
+                                </p>
+                                </div>
+                                <div className="w-full">
+                                <p className="text-sm sm:text-base text-dark">
+                                    1284 x 2778 pixels, 19.5:9 ratio
+                                </p>
+                                </div>
+                            </div>
 
-                  {/* <!-- info item --> */}
-                  <div className="rounded-md even:bg-gray-1 flex py-4 px-4 sm:px-5">
-                    <div className="max-w-[450px] min-w-[140px] w-full">
-                      <p className="text-sm sm:text-base text-dark">Chipset</p>
-                    </div>
-                    <div className="w-full">
-                      <p className="text-sm sm:text-base text-dark">
-                        Apple A15 Bionic (5 nm)
-                      </p>
-                    </div>
-                  </div>
+                            
+                            <div className="rounded-md even:bg-gray-1 flex py-4 px-4 sm:px-5">
+                                <div className="max-w-[450px] min-w-[140px] w-full">
+                                <p className="text-sm sm:text-base text-dark">Chipset</p>
+                                </div>
+                                <div className="w-full">
+                                <p className="text-sm sm:text-base text-dark">
+                                    Apple A15 Bionic (5 nm)
+                                </p>
+                                </div>
+                            </div>
 
-                  {/* <!-- info item --> */}
-                  <div className="rounded-md even:bg-gray-1 flex py-4 px-4 sm:px-5">
-                    <div className="max-w-[450px] min-w-[140px] w-full">
-                      <p className="text-sm sm:text-base text-dark">Memory</p>
-                    </div>
-                    <div className="w-full">
-                      <p className="text-sm sm:text-base text-dark">
-                        128GB 6GB RAM | 256GB 6GB RAM | 512GB 6GB RAM
-                      </p>
-                    </div>
-                  </div>
+                            
+                            <div className="rounded-md even:bg-gray-1 flex py-4 px-4 sm:px-5">
+                                <div className="max-w-[450px] min-w-[140px] w-full">
+                                <p className="text-sm sm:text-base text-dark">Memory</p>
+                                </div>
+                                <div className="w-full">
+                                <p className="text-sm sm:text-base text-dark">
+                                    128GB 6GB RAM | 256GB 6GB RAM | 512GB 6GB RAM
+                                </p>
+                                </div>
+                            </div>
 
-                  {/* <!-- info item --> */}
-                  <div className="rounded-md even:bg-gray-1 flex py-4 px-4 sm:px-5">
-                    <div className="max-w-[450px] min-w-[140px] w-full">
-                      <p className="text-sm sm:text-base text-dark">
-                        Main Camera
-                      </p>
-                    </div>
-                    <div className="w-full">
-                      <p className="text-sm sm:text-base text-dark">
-                        12MP + 12MP | 4K@24/25/30/60fps, stereo sound rec.
-                      </p>
-                    </div>
-                  </div>
+                        
+                            <div className="rounded-md even:bg-gray-1 flex py-4 px-4 sm:px-5">
+                                <div className="max-w-[450px] min-w-[140px] w-full">
+                                <p className="text-sm sm:text-base text-dark">
+                                    Main Camera
+                                </p>
+                                </div>
+                                <div className="w-full">
+                                <p className="text-sm sm:text-base text-dark">
+                                    12MP + 12MP | 4K@24/25/30/60fps, stereo sound rec.
+                                </p>
+                                </div>
+                            </div>
 
-                  {/* <!-- info item --> */}
-                  <div className="rounded-md even:bg-gray-1 flex py-4 px-4 sm:px-5">
-                    <div className="max-w-[450px] min-w-[140px] w-full">
-                      <p className="text-sm sm:text-base text-dark">
-                        Selfie Camera
-                      </p>
-                    </div>
-                    <div className="w-full">
-                      <p className="text-sm sm:text-base text-dark">
-                        12 MP | 4K@24/25/30/60fps, 1080p@25/30/60/120fps,
-                        gyro-EIS
-                      </p>
-                    </div>
-                  </div>
+                            
+                            <div className="rounded-md even:bg-gray-1 flex py-4 px-4 sm:px-5">
+                                <div className="max-w-[450px] min-w-[140px] w-full">
+                                <p className="text-sm sm:text-base text-dark">
+                                    Selfie Camera
+                                </p>
+                                </div>
+                                <div className="w-full">
+                                <p className="text-sm sm:text-base text-dark">
+                                    12 MP | 4K@24/25/30/60fps, 1080p@25/30/60/120fps,
+                                    gyro-EIS
+                                </p>
+                                </div>
+                            </div>
 
-                  {/* <!-- info item --> */}
-                  <div className="rounded-md even:bg-gray-1 flex py-4 px-4 sm:px-5">
-                    <div className="max-w-[450px] min-w-[140px] w-full">
-                      <p className="text-sm sm:text-base text-dark">
-                        Battery Info
-                      </p>
-                    </div>
-                    <div className="w-full">
-                      <p className="text-sm sm:text-base text-dark">
-                        Li-Ion 4323 mAh, non-removable | 15W wireless (MagSafe),
-                        7.5W wireless (Qi)
-                      </p>
-                    </div>
-                  </div>
+                        
+                        <div className="rounded-md even:bg-gray-1 flex py-4 px-4 sm:px-5">
+                            <div className="max-w-[450px] min-w-[140px] w-full">
+                            <p className="text-sm sm:text-base text-dark">
+                                Battery Info
+                            </p>
+                            </div>
+                            <div className="w-full">
+                            <p className="text-sm sm:text-base text-dark">
+                                Li-Ion 4323 mAh, non-removable | 15W wireless (MagSafe),
+                                7.5W wireless (Qi)
+                            </p>
+                            </div>
+                        </div>
+                        </> */}
+                  
                 </div>
               </div>
               {/* <!-- tab content two end --> */}
@@ -929,7 +940,8 @@ const ShopDetails = () => {
                 >
                   <div className="max-w-[570px] w-full">
                     <h2 className="font-medium text-2xl text-dark mb-9">
-                      03 Review for this product
+                      {/* 03 Review for this product */}
+                      03 Avis pour ce produit
                     </h2>
 
                     <div className="flex flex-col gap-6">
@@ -1280,16 +1292,19 @@ const ShopDetails = () => {
                   <div className="max-w-[550px] w-full">
                     <form>
                       <h2 className="font-medium text-2xl text-dark mb-3.5">
-                        Add a Review
+                        {/* Add a Review */}
+                        Ajouter un avis
                       </h2>
 
                       <p className="mb-6">
-                        Your email address will not be published. Required
-                        fields are marked *
+                        {/* Your email address will not be published. Required
+                        fields are marked * */}
+                        Votre adresse e-mail ne sera pas publiée. Les champs
+                        requis sont marqués d'un *
                       </p>
 
                       <div className="flex items-center gap-3 mb-7.5">
-                        <span>Your Rating*</span>
+                        <span>Votre avis*</span>
 
                         <div className="flex items-center gap-1">
                           <span className="cursor-pointer text-[#FBB040]">
@@ -1377,7 +1392,8 @@ const ShopDetails = () => {
                       <div className="rounded-xl bg-white shadow-1 p-4 sm:p-6">
                         <div className="mb-5">
                           <label htmlFor="comments" className="block mb-2.5">
-                            Comments
+                            {/* Comments */}
+                            Commentaires
                           </label>
 
                           <textarea
@@ -1401,7 +1417,8 @@ const ShopDetails = () => {
                         <div className="flex flex-col lg:flex-row gap-5 sm:gap-7.5 mb-5.5">
                           <div>
                             <label htmlFor="name" className="block mb-2.5">
-                              Name
+                              {/* Name */}
+                              Nom Complet
                             </label>
 
                             <input
@@ -1432,13 +1449,16 @@ const ShopDetails = () => {
                           type="submit"
                           className="inline-flex font-medium text-white bg-blue py-3 px-7 rounded-md ease-out duration-200 hover:bg-blue-dark"
                         >
-                          Submit Reviews
+                          {/* Submit Reviews */}
+                            Soumettre l&apos;avis
                         </button>
                       </div>
                     </form>
                   </div>
                 </div>
               </div>
+
+
               {/* <!-- tab content three end --> */}
               {/* <!--== tab content end ==--> */}
             </div>
@@ -1446,7 +1466,7 @@ const ShopDetails = () => {
 
           <RecentlyViewdItems />
 
-          <Newsletter />
+          {/* <Newsletter /> */}
         </>
       )}
     </>

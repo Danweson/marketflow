@@ -41,8 +41,8 @@ const SingleItem = ({ item }) => {
             </div>
 
             <div>
-              <h3 className="text-dark ease-out duration-200 hover:text-blue">
-                <a href="#"> {item.title} </a>
+              <h3 className="text-dark ease-out duration-200 hover:text-yellow">
+                <a href="/product-details"> {item.title} </a>
               </h3>
             </div>
           </div>
@@ -50,7 +50,7 @@ const SingleItem = ({ item }) => {
       </div>
 
       <div className="min-w-[180px]">
-        <p className="text-dark">${item.discountedPrice}</p>
+        <p className="text-dark">{item.discountedPrice} {item.currency} </p>
       </div>
 
       <div className="min-w-[275px]">
@@ -58,7 +58,7 @@ const SingleItem = ({ item }) => {
           <button
             onClick={() => handleDecreaseQuantity()}
             aria-label="button for remove product"
-            className="flex items-center justify-center w-11.5 h-11.5 ease-out duration-200 hover:text-blue"
+            className="flex items-center justify-center w-11.5 h-11.5 ease-out duration-200 hover:text-yellow"
           >
             <svg
               className="fill-current"
@@ -82,7 +82,7 @@ const SingleItem = ({ item }) => {
           <button
             onClick={() => handleIncreaseQuantity()}
             aria-label="button for add product"
-            className="flex items-center justify-center w-11.5 h-11.5 ease-out duration-200 hover:text-blue"
+            className="flex items-center justify-center w-11.5 h-11.5 ease-out duration-200 hover:text-green"
           >
             <svg
               className="fill-current"
@@ -106,7 +106,7 @@ const SingleItem = ({ item }) => {
       </div>
 
       <div className="min-w-[200px]">
-        <p className="text-dark">${item.discountedPrice * quantity}</p>
+        <p className="text-dark">{item.discountedPrice * quantity}</p>
       </div>
 
       <div className="min-w-[50px] flex justify-end">

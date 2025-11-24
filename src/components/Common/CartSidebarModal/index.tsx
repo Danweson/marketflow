@@ -45,7 +45,8 @@ const CartSidebarModal = () => {
         <div className="w-full max-w-[500px] shadow-1 bg-white px-4 sm:px-7.5 lg:px-11 relative modal-content">
           <div className="sticky top-0 bg-white flex items-center justify-between pb-7 pt-4 sm:pt-7.5 lg:pt-11 border-b border-gray-3 mb-7.5">
             <h2 className="font-medium text-dark text-lg sm:text-2xl">
-              Cart View
+              {/* Cart View */}
+                Vue du Panier
             </h2>
             <button
               onClick={() => closeCartModal()}
@@ -93,25 +94,27 @@ const CartSidebarModal = () => {
 
           <div className="border-t border-gray-3 bg-white pt-5 pb-4 sm:pb-7.5 lg:pb-11 mt-7.5 sticky bottom-0">
             <div className="flex items-center justify-between gap-5 mb-6">
-              <p className="font-medium text-xl text-dark">Subtotal:</p>
+              <p className="font-medium text-xl text-dark">Sous total:</p>
 
-              <p className="font-medium text-xl text-dark">${totalPrice}</p>
+              <p className="font-medium text-xl text-dark">{totalPrice}</p>
             </div>
 
             <div className="flex items-center gap-4">
               <Link
                 onClick={() => closeCartModal()}
                 href="/cart"
-                className="w-full flex justify-center font-medium text-white bg-blue py-[13px] px-6 rounded-md ease-out duration-200 hover:bg-blue-dark"
+                className="w-full flex justify-center font-medium text-yellow bg-white hover:bg-yellow hover:text-white border border-yellow py-[13px] px-6 rounded-md ease-out duration-200"
               >
-                View Cart
+                {/* View Cart */}
+                Vue du Panier
               </Link>
 
               <Link
                 href="/checkout"
-                className="w-full flex justify-center font-medium text-white bg-dark py-[13px] px-6 rounded-md ease-out duration-200 hover:bg-opacity-95"
+                className="w-full flex justify-center font-medium text-white bg-yellow hover:bg-dark py-[13px] px-6 rounded-md ease-out duration-200 hover:bg-opacity-95"
               >
-                Checkout
+                {/* Checkout */}
+                Paiement
               </Link>
             </div>
           </div>

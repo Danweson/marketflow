@@ -4,7 +4,10 @@ const Coupon = () => {
   return (
     <div className="bg-white shadow-1 rounded-[10px] mt-7.5">
       <div className="border-b border-gray-3 py-5 px-4 sm:px-8.5">
-        <h3 className="font-medium text-xl text-dark">Have any Coupon Code?</h3>
+        <h3 className="font-medium text-xl text-dark">
+            {/* Have any Coupon Code? */}
+            Avez-vous un code promo ?
+        </h3>
       </div>
 
       <div className="py-8 px-4 sm:px-8.5">
@@ -19,9 +22,10 @@ const Coupon = () => {
 
           <button
             type="submit"
-            className="inline-flex font-medium text-white bg-blue py-3 px-6 rounded-md ease-out duration-200 hover:bg-blue-dark"
+            className="inline-flex font-medium text-white bg-dark py-3 px-6 rounded-md ease-out duration-200 hover:bg-yellow"
           >
-            Apply
+            {/* Apply */}
+            Appliquer
           </button>
         </div>
       </div>

@@ -24,7 +24,7 @@ const Testimonials = () => {
 
   return (
     <section className="overflow-hidden pb-16.5">
-      <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
+      <div className="max-w-[1200px] w-full mx-auto px-4 sm:px-8 xl:px-0">
         <div className="">
           <div className="swiper testimonial-carousel common-carousel p-5">
             {/* <!-- section title --> */}
@@ -37,10 +37,12 @@ const Testimonials = () => {
                     width={17}
                     height={17}
                   />
-                  Testimonials
+                  {/* Testimonials */}
+                  Témoignages
                 </span>
                 <h2 className="font-semibold text-xl xl:text-heading-5 text-dark">
-                  User Feedbacks
+                  {/* User Feedbacks */}
+                  Les avis des Utilisateurs
                 </h2>
               </div>
 

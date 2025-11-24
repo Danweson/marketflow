@@ -312,22 +312,23 @@ const QuickViewModal = () => {
               <div className="flex flex-wrap justify-between gap-5 mt-6 mb-7.5">
                 <div>
                   <h4 className="font-semibold text-lg text-dark mb-3.5">
-                    Price
+                    {/* Price */}
+                    Prix
                   </h4>
 
                   <span className="flex items-center gap-2">
                     <span className="font-semibold text-dark text-xl xl:text-heading-4">
-                      ${product.discountedPrice}
+                      {product.discountedPrice} {product.currency}
                     </span>
                     <span className="font-medium text-dark-4 text-lg xl:text-2xl line-through">
-                      ${product.price}
+                      {product.price} {product.currency}
                     </span>
                   </span>
                 </div>
 
                 <div>
                   <h4 className="font-semibold text-lg text-dark mb-3.5">
-                    Quantity
+                    Quantité
                   </h4>
 
                   <div className="flex items-center gap-3">

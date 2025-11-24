@@ -47,7 +47,7 @@ const ProductItem = ({ item }: { item: Product }) => {
 
   return (
     <div className="group">
-      <div className="relative overflow-hidden flex items-center justify-center rounded-lg bg-[#F6F7FB] min-h-[270px] mb-4">
+      <div className="relative overflow-hidden flex items-center justify-center rounded-lg bg-[#F6F7FB] min-h-[270px] mb-4 shadow-2">
         <Image src={item.imgs.previews[0]} alt="" width={250} height={250} />
 
         <div className="absolute left-0 bottom-0 translate-y-full w-full flex items-center justify-center gap-2.5 pb-5 ease-linear duration-200 group-hover:translate-y-0">
@@ -58,7 +58,7 @@ const ProductItem = ({ item }: { item: Product }) => {
             }}
             id="newOne"
             aria-label="button for quick view"
-            className="flex items-center justify-center w-9 h-9 rounded-[5px] shadow-1 ease-out duration-200 text-dark bg-white hover:text-blue"
+            className="flex items-center justify-center w-9 h-9 rounded-[5px] shadow-1 ease-out duration-200 text-dark bg-white hover:text-yellow"
           >
             <svg
               className="fill-current"
@@ -85,16 +85,17 @@ const ProductItem = ({ item }: { item: Product }) => {
 
           <button
             onClick={() => handleAddToCart()}
-            className="inline-flex font-medium text-custom-sm py-[7px] px-5 rounded-[5px] bg-blue text-white ease-out duration-200 hover:bg-blue-dark"
+            className="inline-flex font-medium text-custom-sm py-[7px] px-5 rounded-[5px] bg-yellow text-white ease-out duration-200 hover:bg-dark"
           >
-            Add to cart
+            {/* Add to cart */}
+            Ajouter au panier
           </button>
 
           <button
             onClick={() => handleItemToWishList()}
             aria-label="button for favorite select"
             id="favOne"
-            className="flex items-center justify-center w-9 h-9 rounded-[5px] shadow-1 ease-out duration-200 text-dark bg-white hover:text-blue"
+            className="flex items-center justify-center w-9 h-9 rounded-[5px] shadow-1 ease-out duration-200 text-dark bg-white hover:text-yellow"
           >
             <svg
               className="fill-current"
@@ -115,7 +116,7 @@ const ProductItem = ({ item }: { item: Product }) => {
         </div>
       </div>
 
-      <div className="flex items-center gap-2.5 mb-2">
+      {/* <div className="flex items-center gap-2.5 mb-2">
         <div className="flex items-center gap-1">
           <Image
             src="/images/icons/icon-star.svg"
@@ -150,18 +151,19 @@ const ProductItem = ({ item }: { item: Product }) => {
         </div>
 
         <p className="text-custom-sm">({item.reviews})</p>
-      </div>
+      </div> */}
 
       <h3
-        className="font-medium text-dark ease-out duration-200 hover:text-blue mb-1.5"
+        className="font-medium text-dark ease-out duration-200 hover:text-yellow mb-1.5"
         onClick={() => handleProductDetails()}
       >
-        <Link href="/shop-details"> {item.title} </Link>
+        <Link href="/product-details"> {item.title} </Link>
       </h3>
-
+        <span className="text-dark"> à partir de 200 pièces</span>
       <span className="flex items-center gap-2 font-medium text-lg">
-        <span className="text-dark">${item.discountedPrice}</span>
-        <span className="text-dark-4 line-through">${item.price}</span>
+        <span className="text-dark">{item.discountedPrice} {item.currency}</span>
+        {/* <span className="text-dark">100 - 200 pièces</span> */}
+        <span className="text-dark-4 line-through">{item.price} {item.currency}</span>
       </span>
     </div>
   );

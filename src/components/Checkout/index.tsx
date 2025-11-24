@@ -11,9 +11,9 @@ import Billing from "./Billing";
 const Checkout = () => {
   return (
     <>
-      <Breadcrumb title={"Checkout"} pages={["checkout"]} />
+      <Breadcrumb title={"Processus de paiement"} pages={["paiement"]} />
       <section className="overflow-hidden py-20 bg-gray-2">
-        <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
+        <div className="max-w-[1200px] w-full mx-auto px-4 sm:px-8 xl:px-0">
           <form>
             <div className="flex flex-col lg:flex-row gap-7.5 xl:gap-11">
               {/* <!-- checkout left --> */}
@@ -31,7 +31,7 @@ const Checkout = () => {
                 <div className="bg-white shadow-1 rounded-[10px] p-4 sm:p-8.5 mt-7.5">
                   <div>
                     <label htmlFor="notes" className="block mb-2.5">
-                      Other Notes (optional)
+                      Autres remarques (facultatif)
                     </label>
 
                     <textarea
@@ -51,7 +51,8 @@ const Checkout = () => {
                 <div className="bg-white shadow-1 rounded-[10px]">
                   <div className="border-b border-gray-3 py-5 px-4 sm:px-8.5">
                     <h3 className="font-medium text-xl text-dark">
-                      Your Order
+                      {/* Your Order */}
+                      Votre Commande
                     </h3>
                   </div>
 
@@ -59,11 +60,11 @@ const Checkout = () => {
                     {/* <!-- title --> */}
                     <div className="flex items-center justify-between py-5 border-b border-gray-3">
                       <div>
-                        <h4 className="font-medium text-dark">Product</h4>
+                        <h4 className="font-medium text-dark">Produits</h4>
                       </div>
                       <div>
                         <h4 className="font-medium text-dark text-right">
-                          Subtotal
+                          Sous-total
                         </h4>
                       </div>
                     </div>
@@ -74,7 +75,7 @@ const Checkout = () => {
                         <p className="text-dark">iPhone 14 Plus , 6/128GB</p>
                       </div>
                       <div>
-                        <p className="text-dark text-right">$899.00</p>
+                        <p className="text-dark text-right">899.00</p>
                       </div>
                     </div>
 
@@ -84,7 +85,7 @@ const Checkout = () => {
                         <p className="text-dark">Asus RT Dual Band Router</p>
                       </div>
                       <div>
-                        <p className="text-dark text-right">$129.00</p>
+                        <p className="text-dark text-right">129.00</p>
                       </div>
                     </div>
 
@@ -94,7 +95,7 @@ const Checkout = () => {
                         <p className="text-dark">Havit HV-G69 USB Gamepad</p>
                       </div>
                       <div>
-                        <p className="text-dark text-right">$29.00</p>
+                        <p className="text-dark text-right">29.00</p>
                       </div>
                     </div>
 
@@ -104,7 +105,7 @@ const Checkout = () => {
                         <p className="text-dark">Shipping Fee</p>
                       </div>
                       <div>
-                        <p className="text-dark text-right">$15.00</p>
+                        <p className="text-dark text-right">15.00</p>
                       </div>
                     </div>
 
@@ -115,7 +116,7 @@ const Checkout = () => {
                       </div>
                       <div>
                         <p className="font-medium text-lg text-dark text-right">
-                          $1072.00
+                          1072.00
                         </p>
                       </div>
                     </div>
@@ -134,9 +135,10 @@ const Checkout = () => {
                 {/* <!-- checkout button --> */}
                 <button
                   type="submit"
-                  className="w-full flex justify-center font-medium text-white bg-blue py-3 px-6 rounded-md ease-out duration-200 hover:bg-blue-dark mt-7.5"
+                  className="w-full flex justify-center font-medium text-white bg-dark py-3 px-6 rounded-md ease-out duration-200 hover:bg-yellow mt-7.5"
                 >
-                  Process to Checkout
+                  {/* Process to Checkout */}
+                  Processus de paiement
                 </button>
               </div>
             </div>

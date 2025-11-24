@@ -5,6 +5,8 @@
 @layer base {
   html {
     @apply scroll-smooth;
+    /* background-color: #0D3442; */
+    background-color: color-mix(in srgb, #0D3442 15%, white);
   }
 
   body {
@@ -137,7 +139,7 @@ input[type='search']::-webkit-search-results-decoration {
 
 .common-carousel .swiper-button-next,
 .common-carousel .swiper-button-prev {
-  @apply !static h-9 w-9 rounded-lg bg-white text-dark border border-gray-3 m-0 ease-out duration-200 hover:bg-blue hover:text-white hover:border-blue;
+  @apply !static h-9 w-9 rounded-lg bg-white text-dark border border-gray-3 m-0 ease-out duration-200 hover:bg-dark hover:text-white hover:border-dark;
 }
 
 .common-carousel .swiper-button-next svg,
@@ -198,4 +200,20 @@ input[type='search']::-webkit-search-results-decoration {
 
 .range-slider__range {
   @apply !bg-blue;
+}
+
+#range-slider-gradient .range-slider__range {
+  background: linear-gradient(90deg, #4f46e5, #06b6d4);
+}
+
+/* Color of the unselected track */
+#range-slider-gradient .range-slider__track {
+  background: #e5e7eb; /* Tailwind gray-200 */
+}
+
+/* Color + shadow for the thumbs */
+#range-slider-gradient .range-slider__thumb {
+  background: #ffffff;
+  border: 2px solid #4f46e5;
+  box-shadow: 0 0 8px rgba(79, 70, 229, 0.5);
 }

@@ -70,7 +70,7 @@ const SingleOrder = ({ orderItem, smallView }: any) => {
           <div className="py-4.5 px-7.5">
             <div className="">
               <p className="text-custom-sm text-dark">
-                <span className="font-bold pr-2"> Order:</span> #
+                <span className="font-bold pr-2"> Commande:</span> #
                 {orderItem.orderId.slice(-8)}
               </p>
             </div>
@@ -83,7 +83,7 @@ const SingleOrder = ({ orderItem, smallView }: any) => {
 
             <div className="">
               <p className="text-custom-sm text-dark">
-                <span className="font-bold pr-2">Status:</span>{" "}
+                <span className="font-bold pr-2">Statut:</span>{" "}
                 <span
                   className={`inline-block text-custom-sm  py-0.5 px-2.5 rounded-[30px] capitalize ${
                     orderItem.status === "delivered"
@@ -102,7 +102,7 @@ const SingleOrder = ({ orderItem, smallView }: any) => {
 
             <div className="">
               <p className="text-custom-sm text-dark">
-                <span className="font-bold pr-2">Title:</span> {orderItem.title}
+                <span className="font-bold pr-2">Titre:</span> {orderItem.title}
               </p>
             </div>
 

@@ -63,7 +63,7 @@ const HeroCarousal = () => {
           </div>
         </div>
       </SwiperSlide>
-      <SwiperSlide>
+      {/* <SwiperSlide>
         {" "}
         <div className="flex items-center pt-6 sm:pt-0 flex-col-reverse sm:flex-row">
           <div className="max-w-[394px] py-10 sm:py-15 lg:py-26 pl-4 sm:pl-7.5 lg:pl-12.5">
@@ -104,7 +104,7 @@ const HeroCarousal = () => {
             />
           </div>
         </div>
-      </SwiperSlide>
+      </SwiperSlide> */}
     </Swiper>
   );
 };

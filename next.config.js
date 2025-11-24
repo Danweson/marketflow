@@ -8,7 +8,7 @@ const nextConfig = {
         unoptimized: isProd ? true : false, // désactive l’optimisation d’images côté serveur
     },
     basePath: isProd ? '/marketflow' : '',
-  assetPrefix: isProd ? '/marketflow/' : '',
+    assetPrefix: isProd ? '/marketflow/' : '',
     // basePath: '/marketflow', // le nom de ton dépôt GitHub
     // assetPrefix: '/marketflow/', // préfixe pour les ressources
 };
